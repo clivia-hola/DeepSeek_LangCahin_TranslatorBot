@@ -1,0 +1,2 @@
+# DeepSeek_LangCahin_TranslatorBot
+colab平台，使用LangChain，用DeepSeek API，搭建简易TranslatorBot
