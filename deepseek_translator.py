@@ -2,8 +2,10 @@ import streamlit as st
 from langchain_deepseek import ChatDeepSeek
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-
+import os
 # 初始化模型
+if not os.getenv("DEEPSEEK_API_KEY"):
+    os.environ["DEEPSEEK_API_KEY"] = "输入DeepSeek的API密码"
 model = ChatDeepSeek(model="deepseek-chat", temperature=0)
 
 def translator_text(text, language):
@@ -21,7 +23,7 @@ def translator_text(text, language):
     return chain.invoke({"text": text})
 
 # Streamlit 应用界面
-st.title("WRJ_GenerativeAI_DeepSeek_Translator")
+st.title("W_DeepSeek_Translator")
 
 # 语言选择
 languages = [
